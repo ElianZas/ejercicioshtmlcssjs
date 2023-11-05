@@ -1,0 +1,112 @@
+@import url('https://fonts.cdnfonts.com/css/nosifer-caps');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nosifer Caps', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+a,
+ul {
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  --backgroundcolor-violeta: #363062;
+  --backgroundcolor-blanco: #F5F5F5;
+  --backgroundcolor-naranja: #F99417;
+  --backgroundcolor-violetaclaro: #4D4C7D;
+}
+
+body {
+  background-color: #1d1d1d;
+  color: white;
+}
+
+.contenedor-banner {
+  background-color: var(--backgroundcolor-naranja);
+  display: flex;
+  gap: 2rem;
+}
+
+.banner {
+  display: flex;
+  gap: 2rem;
+  white-space: nowrap;
+  animation: 15s slider infinite linear;
+}
+
+@keyframes slider {
+  from {
+    transform: translateX(0%)
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
+/* header y nav */
+header {
+  height: 70px;
+  background: var(--backgroundcolor-violeta);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.fa-bars {
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--backgroundcolor-naranja);
+}
+
+nav {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translate(100%);
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  height: 100%;
+}
+
+@media (min-width:768px) {
+  .bars-menu {
+    display: none;
+  }
+
+  nav {
+    position: relative;
+    top: 0;
+    transform: translate(0);
+    width: 80%;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    right: 0;
+    justify-content: end;
+  }
+
+  .nav-links {
+    font-size: 90%;
+  }
+}
